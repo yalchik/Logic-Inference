@@ -1,34 +1,39 @@
-package logicinference;
+package by.iyalchyk.logicinference;
 
 /**
- * Правило (структурная часть базы знаний)
+ * Represents rules like L(y,x) <- K(x,y)
  */
 public class Rule {
-    
-    /** Целевой предикат */
+
+    /**
+     * Target predicate
+     */
     private Predicate inference;
-    
-    /** Исходные предикаты */
+
+    /**
+     * Source predicates
+     */
     private Predicate[] causes;
 
     /**
-     * Инициализирует целевой предикат и исходные предикаты заданными зачениями
-     * @param _inference целевой предикат
-     * @param _causes исходные предикаты
+     * Initializes a rule with the given target and source predicates
+     *
+     * @param inference target predicate
+     * @param causes    source predicates
      */
-    public Rule(Predicate _inference, Predicate[] _causes) {
-        inference = _inference;
-        causes = _causes;
+    public Rule(Predicate inference, Predicate[] causes) {
+        this.inference = inference;
+        this.causes = causes;
     }
 
     public Predicate getInference() {
         return inference;
     }
-    
+
     public Predicate[] getCauses() {
         return causes;
     }
-    
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
